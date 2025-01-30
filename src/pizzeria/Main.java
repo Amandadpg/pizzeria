@@ -68,6 +68,14 @@ public class Main {
 				System.out.println();
 				System.out.println();
 				break;
+			case 2:
+				Cliente c = nuevoCliente (sc);
+				Cliente.addCliente(c);
+				System.out.println();
+				System.out.println();
+				break;
+				
+				
 			}
 			
 			
