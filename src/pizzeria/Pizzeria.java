@@ -21,6 +21,7 @@ public class Pizzeria {
 	 if(p == null){
 		throw new IllegalArgumentException("La pizza no puede ser nula");
 	 }
+	 pizza.add(p);
  }
 	
  public void addCliente(Cliente c) {
@@ -32,6 +33,7 @@ public class Pizzeria {
 			throw new IllegalArgumentException("El comprador ya ha sido añadido");
 		}
 	}
+	cliente.add(c);
  }
 
 }
