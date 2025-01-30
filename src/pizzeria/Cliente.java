@@ -8,11 +8,11 @@ public class Cliente {
 	private double dineroDisponible;
 	
 	public Cliente(String nombre, String direccion, String email, String telefono, double dineroDisponible) {
-		this.nombre = nombre;
-		this.direccion = direccion;
-		this.email = email;
-		this.telefono = telefono;
-		this.dineroDisponible = dineroDisponible;
+		setNombre(nombre);
+		setDireccion(direccion);
+		setEmail(email);
+		setTelefono(telefono);
+		setDineroDisponible(dineroDisponible);
 		
 	}
 	
