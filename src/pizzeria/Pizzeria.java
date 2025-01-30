@@ -21,13 +21,19 @@ public class Pizzeria {
 	 if(p == null){
 		throw new IllegalArgumentException("La pizza no puede ser nula");
 	 }
+	 pizza.add(p);
  }
 	
  public void addCliente(Cliente c) {
 	 if(c == null) {
 		 throw new IllegalArgumentException("El cliente no puede ser nulo");
 	 }
-	
+	for(Cliente cliente : this.cliente) {
+		if(cliente.getId() == c.getId()) {
+			throw new IllegalArgumentException("El comprador ya ha sido añadido");
+		}
+	}
+	cliente.add(c);
  }
  
  public void verPedidos() {

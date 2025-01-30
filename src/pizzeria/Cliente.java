@@ -1,6 +1,7 @@
 package pizzeria;
 
 public class Cliente {
+	private int id;
 	private String nombre;
 	private String direccion;
 	private String email;
@@ -17,7 +18,15 @@ public class Cliente {
 	}
 	
 	
-	
+	public int getId() {
+		return id;
+	}
+
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
 
 	public String getNombre() {
 		return nombre;
