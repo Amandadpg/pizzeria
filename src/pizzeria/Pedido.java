@@ -12,9 +12,9 @@ public class Pedido {
 	
 	private static int idCodigo = 1;
 	
-	public Pedido ( Cliente cliente, LocalDate fecha, double total, String tipo) {
+	public Pedido ( Cliente cliente, double total, String tipo) {
 		setCliente(cliente);
-		setFecha(fecha);
+		this.fecha = LocalDate.now();
 		setTotal(total);
 		setTipo(tipo);
 		this.id = idCodigo++;
@@ -53,7 +53,7 @@ public class Pedido {
 	}
 
 	public void setTotal(double total) {
-		if (total > 0 ) {
+		if (total < 0 ) {
 			throw new IllegalArgumentException("El total del pedido no puede ser menos que 0");
 		}
 		this.total = total;

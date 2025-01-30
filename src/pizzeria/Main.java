@@ -1,5 +1,7 @@
 package pizzeria;
 
+import java.time.LocalDate;
+
 public class Main {
 
 	public static void main(String[] args) {
@@ -16,12 +18,22 @@ public class Main {
 		
 		
 		
-		Cliente cliente1 = new Cliente("Juan Pérez", "Calle Falsa 123", "juan.perez@example.com", "555-1234", 1500.50);
-        Cliente cliente2 = new Cliente("Ana Gómez", "Av. Siempre Viva 456", "ana.gomez@example.com", "555-5678", 3000.00);
-        Cliente cliente3 = new Cliente("Carlos López", "Plaza Central 789", "carlos.lopez@example.com", "555-8765", 500.25);
-        Cliente cliente4 = new Cliente("María Rodríguez", "Boulevard Principal 321", "maria.rodriguez@example.com", "555-4321", 2500.75);
+		Cliente cliente1 = new Cliente("Juan Pérez", "Calle Falsa 123", "juan.perez@example.com", "234568952", 1500.50);
+        Cliente cliente2 = new Cliente("Ana Gómez", "Av. Siempre Viva 456", "ana.gomez@example.com", "258764523", 3000.00);
+        Cliente cliente3 = new Cliente("Carlos López", "Plaza Central 789", "carlos.lopez@example.com", "235012485", 500.25);
+        Cliente cliente4 = new Cliente("María Rodríguez", "Boulevard Principal 321", "maria.rodriguez@example.com", "259630148", 2500.75);
         
         cliente1.Info();
+        
+      
+        
+        LocalDate fechaPedido1 = LocalDate.of(2024, 1, 25);
+        
+        Pedido pedido1 = new Pedido(cliente1, 250.75, "DOMICILIO");
+        
+        pedido1.mostrarInformacion();
+       
+        
 
 	}
 
