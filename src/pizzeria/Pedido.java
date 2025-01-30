@@ -13,18 +13,15 @@ public class Pedido {
 	private static int idCodigo = 1;
 	
 	public Pedido ( Cliente cliente, LocalDate fecha, double total, String tipo) {
-		setId(idCodigo++);
 		setCliente(cliente);
 		setFecha(fecha);
 		setTotal(total);
 		setTipo(tipo);
+		this.id = idCodigo++;
 		
 	}
 
 	public int getId() {
-		if (id < 0) {
-			throw new IllegalArgumentException("El id tiene que ser mayor que 0");
-		}
 		return id;
 	}
 
