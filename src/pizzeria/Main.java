@@ -98,5 +98,6 @@ public class Main {
 		double dineroDisponible = sc.nextDouble();
 
 		return new Cliente(nombre, direccion, email, telefono, dineroDisponible);
+		// Cambio
 	}
 }
