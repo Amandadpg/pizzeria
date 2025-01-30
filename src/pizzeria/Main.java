@@ -85,4 +85,18 @@ public class Main {
 		return new Pizza(nombre, ingredientes, precio);
 	}
 
+	public static Cliente nuevoCliente(Scanner sc) {
+		System.out.println("Nombre:");
+		String nombre = sc.next();
+		System.out.println("Direccion: ");
+		String direccion = sc.next();
+		System.out.println("Email: ");
+		String email = sc.next();
+		System.out.println("Telefono: ");
+		String telefono = sc.next();
+		System.out.println("Dinero disponible: ");
+		double dineroDisponible = sc.nextDouble();
+
+		return new Cliente(nombre, direccion, email, telefono, dineroDisponible);
+	}
 }
