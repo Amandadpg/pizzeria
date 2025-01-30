@@ -27,7 +27,11 @@ public class Pizzeria {
 	 if(c == null) {
 		 throw new IllegalArgumentException("El cliente no puede ser nulo");
 	 }
-	
+	for(Cliente cliente : this.cliente) {
+		if(cliente.getId() == c.getId()) {
+			throw new IllegalArgumentException("El comprador ya ha sido añadido");
+		}
+	}
  }
 
 }
