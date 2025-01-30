@@ -10,12 +10,14 @@ public class Pedido {
 	private double total;
 	private Tipo tipo;
 	
-	public Pedido (int id, Cliente cliente, LocalDate fecha, double total, Tipo tipo) {
-		this.id = id;
-		this.cliente = cliente;
-		this.fecha = fecha;
-		this.total = total;
-		this.tipo = tipo;
+	private static int idCodigo = 1;
+	
+	public Pedido ( Cliente cliente, LocalDate fecha, double total, String tipo) {
+		setId(idCodigo++);
+		setCliente(cliente);
+		setFecha(fecha);
+		setTotal(total);
+		setTipo(tipo);
 		
 	}
 
