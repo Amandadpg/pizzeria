@@ -80,7 +80,7 @@ public class Cliente {
 
 	//metodos
 	
-	public void Info(String nombre, String direccion, String email, String telefono, double dineroDisponible) {
+	public void Info() {
 		System.out.println("nombre: " + this.nombre);
 		System.out.println("Direccion: " + this.direccion);
 		System.out.println("Email: " + this.email);
