@@ -4,6 +4,12 @@ public class Pizza {
 	private String nombre;
 	private String ingredientes;
 	private double precio;
+	private int id;
+	
+	
+	
+	private static  int contadorId=1;
+	
 	
 	
 	public Pizza (String nombre, String ingredientes, double precio) {
@@ -11,7 +17,7 @@ public class Pizza {
 		setNombre(nombre);
 		setIngredientes(ingredientes);
 		setPrecio(precio);
-		
+		this.id= contadorId++;
 }
 
 
