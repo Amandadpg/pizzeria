@@ -29,5 +29,17 @@ public class Pizzeria {
 	 }
 	
  }
+ 
+ public void verPedidos() {
+     if (pedido.isEmpty()) {
+         System.out.println("No hay pedidos registrados.");
+     } else {
+         System.out.println("Lista de pedidos:");
+         for (Pedido p : pedido) {
+             System.out.println(p);
+         }
+     }
+ }
+ 
 
 }
