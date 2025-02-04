@@ -95,6 +95,10 @@ public class Cliente {
 		System.out.println("Email: " + this.email);
 		System.out.println("Telefono: " + telefono);
 		System.out.println("Dinero disponible: " + dineroDisponible);
+		
+		
+		 System.out.println("------------------------------");
+		 System.out.println();
 	}
 
 	

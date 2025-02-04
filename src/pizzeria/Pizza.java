@@ -70,6 +70,9 @@ public class Pizza {
 		System.out.println("Nombre pizza: " + this.nombre);
 		System.out.println("Ingredientes: " + this.ingredientes);
 		System.out.println("Precio: " + this.precio);
+		
+		System.out.println("------------------------------");
+		System.out.println();
 	
 	
 	

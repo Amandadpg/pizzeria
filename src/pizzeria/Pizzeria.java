@@ -2,12 +2,16 @@ package pizzeria;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 public class Pizzeria {
 
 	private List<Cliente> cliente;
 	private List<Pizza> pizza;
 	private List<Pedido> pedido;
+	
+	private Pizza pizzaMasCara;
+    private Pizza pizzaMasBarata;
 	
 	public Pizzeria() {
 		
@@ -82,4 +86,54 @@ public class Pizzeria {
 	}
  
 
+ public void buscarClientePorTelefono(Scanner sc) {
+	 	System.out.println("Telefono:");
+	 	String telef = sc.next();
+	    for (Cliente cliente : cliente) {
+	        if (cliente.getTelefono().equals(telef)) {
+	            cliente.Info();
+	          
+	        }
+	    }
+	    
+	}
+ 
+ public void pizzasConIngrediente(Scanner sc) {
+	 	System.out.println("Ingrediente:");
+	 	String ingre = sc.next();
+	 	for(Pizza p : this.pizza) {
+			if(p.getIngredientes().contains(ingre)) {
+				p.mostrarInformación();
+			}
+		}
+	}
+ 
+ public void pizzasSinIngrediente(Scanner sc) {
+	 	System.out.println("Ingrediente:");
+	 	String ingre = sc.next();
+	 	for(Pizza p : this.pizza) {
+			if(!(p.getIngredientes().contains(ingre))) {
+				p.mostrarInformación();
+			}
+		}
+	}
+ 
+ public void pizzaMasCara(List<Pizza> pizza) {
+	 for(Pizza pizza : List<Pizza>) {
+		 if()
+	 }
+     if (pizzaMasCara == null || pizza.getPrecio() > pizzaMasCara.getPrecio()) {
+         pizzaMasCara = pizza;
+     }
+     
+     System.out.println("La pizza mas cara: " + pizzaMasCara);
+//     if (pizzaMasBarata == null || nuevaPizza.getPrecio() < pizzaMasBarata.getPrecio()) {
+//         pizzaMasBarata = nuevaPizza;
+//     }
+ }
+
 }
+
+
+
+

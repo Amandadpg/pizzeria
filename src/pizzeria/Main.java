@@ -35,6 +35,13 @@ public class Main {
 		
 		Pizzeria pizzeria = new Pizzeria();
 		Scanner sc = new Scanner(System.in);
+		Cliente c = new Cliente("Laura", "calle", "mari", "123456789", 23);
+				pizzeria.addCliente(c);
+		Pizza p = new Pizza("Margarita", "tomate,queso", 12);
+		Pizza pepperoni = new Pizza("Pepperoni", "tomate,mozzarella,pepperoni", 9.50);
+        Pizza cuatroQuesos = new Pizza("Cuatro Quesos", "mozzarella,gorgonzola,parmesano,queso de cabra", 10.00);
+        Pizza hawaiana = new Pizza("Hawaiana", "tomate,mozzarella,jamon,piña", 9.00);
+			pizzeria.addPizza(p);
 		 int opcion;
 		do {
 			
@@ -94,9 +101,28 @@ public class Main {
 			
 			case 4:
 				pizzeria.verPizzas();
+				break;
+
 				
 			case 6:
 				pizzeria.verClientes();
+				break;
+
+				
+			case 7:
+				pizzeria.buscarClientePorTelefono(sc);
+				break;
+				
+			case 8:
+				pizzeria.pizzasConIngrediente(sc);
+				
+				
+			case 9:
+				pizzeria.pizzasSinIngrediente(sc);
+				
+			case 14:
+				pizzeria.pizzaMasCara(nuevaPizza);
+
 			}
 			
 		
