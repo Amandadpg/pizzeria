@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Main {
 
 	public static void main(String[] args) {
-
+		menu();
 	/*
 	 * System.out.println("prueba");
 	 * 
@@ -28,11 +28,12 @@ public class Main {
 	 * 
 	 * cliente1.Info();
 	 */
-
+	}
 	// Pizza pizza1 = new Pizza(p);
 	public static void menu() {
-			
 		
+		
+		Pizzeria pizzeria = new Pizzeria();
 		Scanner sc = new Scanner(System.in);
 		 int opcion;
 		do {
@@ -62,50 +63,79 @@ public class Main {
 			System.out.println();
 			
 			switch(opcion) {
-			case 1:;
-				Pizza p = nuevaPizza (sc);
+			case 1:
+//				Pizza p = nuevaPizza (sc);
 			//	pizzeria.addPizza(p);
-				System.out.println();
-				System.out.println();
+				System.out.println("Nombre:");
+				String nombrePizza = sc.next();
+				System.out.println("Ingredientes: ");
+				String ingredientes = sc.next();
+				System.out.println("Precio: ");
+				double precio = sc.nextDouble();
+
+				pizzeria.addPizza(new Pizza(nombrePizza, ingredientes, precio));
 				break;
+
+				
 			case 2:
-				Cliente c = nuevoCliente (sc);
-				Cliente.addCliente(c);
-				System.out.println();
-				System.out.println();
+				System.out.println("Nombre:");
+				String nombreCliente = sc.next();
+				System.out.println("Direccion: ");
+				String direccion = sc.next();
+				System.out.println("Email: ");
+				String email = sc.next();
+				System.out.println("Telefono: ");
+				String telefono = sc.next();
+				System.out.println("Dinero disponible: ");
+				double dineroDisponible = sc.nextDouble();
+			
+				pizzeria.addCliente(new Cliente(nombreCliente, direccion, email, telefono, dineroDisponible));
 				break;
+			
+			case 4:
+				pizzeria.verPizzas();
 				
-				
+			case 6:
+				pizzeria.verClientes();
 			}
 			
+		
 			
 			
-		}while(true);
+		}while(opcion >= 1 || opcion <=17);
+	
+	
+//	public static Pizza nuevaPizza(Scanner sc) {
+//		System.out.println("Nombre:");
+//		String nombre = sc.next();
+//		System.out.println("Ingredientes: ");
+//		String ingredientes = sc.next();
+//		System.out.println("Precio: ");
+//		double precio = sc.nextDouble();
+//
+//		return new Pizza(nombre, ingredientes, precio);
+//	}
 
-	public static Pizza nuevaPizza(Scanner sc) {
-		System.out.println("Nombre:");
-		String nombre = sc.next();
-		System.out.println("Ingredientes: ");
-		String ingredientes = sc.next();
-		System.out.println("Precio: ");
-		double precio = sc.nextDouble();
-
-		return new Pizza(nombre, ingredientes, precio);
-	}
-
-	public static Cliente nuevoCliente(Scanner sc) {
-		System.out.println("Nombre:");
-		String nombre = sc.next();
-		System.out.println("Direccion: ");
-		String direccion = sc.next();
-		System.out.println("Email: ");
-		String email = sc.next();
-		System.out.println("Telefono: ");
-		String telefono = sc.next();
-		System.out.println("Dinero disponible: ");
-		double dineroDisponible = sc.nextDouble();
-
-		return new Cliente(nombre, direccion, email, telefono, dineroDisponible);
-		// Cambio
+//	public static Cliente nuevoCliente(Scanner sc) {
+//		System.out.println("Nombre:");
+//		String nombre = sc.next();
+//		System.out.println("Direccion: ");
+//		String direccion = sc.next();
+//		System.out.println("Email: ");
+//		String email = sc.next();
+//		System.out.println("Telefono: ");
+//		String telefono = sc.next();
+//		System.out.println("Dinero disponible: ");
+//		double dineroDisponible = sc.nextDouble();
+//	
+//		return new Cliente(nombre, direccion, email, telefono, dineroDisponible);
+//		// Cambio
+//	}
+	
+	
 	}
 }
+
+
+	
+

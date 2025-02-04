@@ -47,5 +47,39 @@ public class Pizzeria {
      }
  }
  
+ public void verPizzas() {
+	    if (pizza.isEmpty()) {
+	        System.out.println("No hay pizzas disponibles en el menú.");
+	    } else {
+	        System.out.println("=== Menú de Pizzas ===");
+	        int contador = 1;
+	        for (Pizza pizza : pizza) {
+	            System.out.println(contador + ". " + pizza.getNombre());
+	            System.out.println("   Precio: $" + pizza.getPrecio());
+	            System.out.println("---------------------------");
+	            contador++;
+	        }
+	    }
+	}
+ 
+ public void verClientes() {
+	    if (cliente.isEmpty()) {
+	        System.out.println("No hay clientes registrados en el sistema.");
+	    } else {
+	        System.out.println("=== Lista de Clientes ===");
+	        int contador = 1;
+	        for (Cliente cliente : cliente) {
+	            System.out.println("Cliente #" + contador);
+	            System.out.println("   Nombre     : " + cliente.getNombre());
+	            System.out.println("   Dirección  : " + cliente.getDireccion());
+	            System.out.println("   Email      : " + cliente.getEmail());
+	            System.out.println("   Teléfono   : " + cliente.getTelefono());
+	            System.out.println("   Dinero Disp: $" + cliente.getDineroDisponible());
+	            System.out.println("------------------------------");
+	            contador++;
+	        }
+	    }
+	}
+ 
 
 }
