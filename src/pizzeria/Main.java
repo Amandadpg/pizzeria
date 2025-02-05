@@ -115,14 +115,17 @@ public class Main {
 				
 			case 8:
 				pizzeria.pizzasConIngrediente(sc);
-				
+				break;
 				
 			case 9:
 				pizzeria.pizzasSinIngrediente(sc);
-				
+				break;
 			case 14:
-				pizza.pizzaMasCara;
-
+				Pizza.pizzaMasCara.getPrecio();
+				Pizza.pizzaMasCara.mostrarInformación();
+				break;
+				
+				
 			}
 			
 		

@@ -19,8 +19,9 @@ public class Pizza {
 		setIngredientes(ingredientes);
 		setPrecio(precio);
 		this.id= contadorId++;
-		if(this.precio > pizzaMasCara.precio) {
+		if(pizzaMasCara == null || this.precio > pizzaMasCara.precio) {
 			pizzaMasCara = this;
+			
 		}
 }
 
