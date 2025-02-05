@@ -44,7 +44,8 @@ public class Main {
 			pizzeria.addPizza(p);
 		 int opcion;
 		do {
-			
+			System.out.println("----Menú de la pizzeria----");
+			System.out.println("Bienvenido a nuestra pizzeria, seleccione una opción:");
 			System.out.println("1. Nueva pizza");
 			System.out.println("2. Nuevo cliente");
 			System.out.println("3. Realizar un pedido");
@@ -124,8 +125,16 @@ public class Main {
 				Pizza.pizzaMasCara.getPrecio();
 				Pizza.pizzaMasCara.mostrarInformación();
 				break;
-				
-				
+			case 15:
+				Pizza.pizzaMasBarata.getPrecio();
+				Pizza.pizzaMasBarata.mostrarInformación();
+				break;
+			default:
+                System.out.println("Opción no válida. Intenta de nuevo.");
+                System.out.println("------------------------------");
+                System.out.println();
+                break;
+
 			}
 			
 		

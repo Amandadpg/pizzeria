@@ -10,6 +10,7 @@ public class Pizza {
 	
 	private static  int contadorId=1;
 	public static Pizza pizzaMasCara = null;
+	public static Pizza pizzaMasBarata = null;
 	
 	
 	
@@ -21,6 +22,9 @@ public class Pizza {
 		this.id= contadorId++;
 		if(pizzaMasCara == null || this.precio > pizzaMasCara.precio) {
 			pizzaMasCara = this;
+		}
+		if(pizzaMasBarata == null || this.precio < pizzaMasBarata.precio) {
+			pizzaMasBarata = this;
 			
 		}
 }
