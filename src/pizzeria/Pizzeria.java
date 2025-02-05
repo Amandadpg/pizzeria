@@ -10,8 +10,6 @@ public class Pizzeria {
 	private List<Pizza> pizza;
 	private List<Pedido> pedido;
 	
-	private Pizza pizzaMasCara;
-    private Pizza pizzaMasBarata;
 	
 	public Pizzeria() {
 		
@@ -118,19 +116,7 @@ public class Pizzeria {
 		}
 	}
  
- public void pizzaMasCara(List<Pizza> pizza) {
-	 for(Pizza pizza : List<Pizza>) {
-		 if()
-	 }
-     if (pizzaMasCara == null || pizza.getPrecio() > pizzaMasCara.getPrecio()) {
-         pizzaMasCara = pizza;
-     }
-     
-     System.out.println("La pizza mas cara: " + pizzaMasCara);
-//     if (pizzaMasBarata == null || nuevaPizza.getPrecio() < pizzaMasBarata.getPrecio()) {
-//         pizzaMasBarata = nuevaPizza;
-//     }
- }
+ 
 
 }
 

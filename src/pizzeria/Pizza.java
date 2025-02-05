@@ -9,6 +9,7 @@ public class Pizza {
 	
 	
 	private static  int contadorId=1;
+	public static Pizza pizzaMasCara = null;
 	
 	
 	
@@ -18,6 +19,9 @@ public class Pizza {
 		setIngredientes(ingredientes);
 		setPrecio(precio);
 		this.id= contadorId++;
+		if(this.precio > pizzaMasCara.precio) {
+			pizzaMasCara = this;
+		}
 }
 
 

@@ -40,7 +40,7 @@ public class Main {
 		Pizza p = new Pizza("Margarita", "tomate,queso", 12);
 		Pizza pepperoni = new Pizza("Pepperoni", "tomate,mozzarella,pepperoni", 9.50);
         Pizza cuatroQuesos = new Pizza("Cuatro Quesos", "mozzarella,gorgonzola,parmesano,queso de cabra", 10.00);
-        Pizza hawaiana = new Pizza("Hawaiana", "tomate,mozzarella,jamon,piña", 9.00);
+        Pizza hawaiana = new Pizza("Hawaiana", "tomate,mozzarella,jamon,piña", 30.00);
 			pizzeria.addPizza(p);
 		 int opcion;
 		do {
@@ -121,7 +121,7 @@ public class Main {
 				pizzeria.pizzasSinIngrediente(sc);
 				
 			case 14:
-				pizzeria.pizzaMasCara(nuevaPizza);
+				pizza.pizzaMasCara;
 
 			}
 			
