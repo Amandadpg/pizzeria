@@ -102,8 +102,9 @@ public class Main {
 				break;
 				
 			case 3:
-				Pedido pe = realizarPedido(sc);
+				Pedido pe = nuevoPedido(sc);
 				pizzeria.addPedido(pe);
+				
 				
 				
 				break;
@@ -161,6 +162,16 @@ public class Main {
 			
 			
 		}while(opcion >= 1 || opcion <=17);
+		
+		public static Pedido nuevoPedido(Scanner sc) {
+			System.out.println("Dame el ID del cliente: ");
+			int cliente = sc.nextInt();
+			System.out.println("Tipo de pedido: ");
+			String tipo = sc.next().toUpperCase();
+			
+			return new Pedido(cliente, tipo);
+			
+		}
 	
 	
 //	public static Pizza nuevaPizza(Scanner sc) {

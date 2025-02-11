@@ -67,6 +67,14 @@ public class Pedido {
 		this.tipo = Tipo.valueOf(tipo);
 	}
 	
+	public void addPizzaPedido(String nombrePizza) {
+		if(nombrePizza == null || nombrePizza.isBlank()) {
+			throw new IllegalArgumentException("No puede ser nulo o blanco");
+		}
+		boolean esta = false;
+		for(Pizza p : Pizzeria.)
+	}
+	
 	public void mostrarInformacion() {
 		System.out.println("Pedido;" + this.id);
 		System.out.println("Nombre del cliente:" + this.cliente);
