@@ -1,6 +1,5 @@
 package pizzeria;
 
-import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
@@ -34,15 +33,15 @@ public class Main {
 	public static void menu() {
 		
 		
-		Pizzeria pizzeria = new Pizzeria();
+        Pizzeria pizzeria = new Pizzeria();
 		Scanner sc = new Scanner(System.in);
-		Cliente c = new Cliente("Laura", "calle", "mari", "123456789", 23);
-				pizzeria.addCliente(c);
-		Pizza p = new Pizza("Margarita", "tomate,queso", 12);
-		Pizza pepperoni = new Pizza("Pepperoni", "tomate,mozzarella,pepperoni", 9.50);
-        Pizza cuatroQuesos = new Pizza("Cuatro Quesos", "mozzarella,gorgonzola,parmesano,queso de cabra", 10.00);
-        Pizza hawaiana = new Pizza("Hawaiana", "tomate,mozzarella,jamon,piña", 30.00);
-			pizzeria.addPizza(p);
+//		Cliente c = new Cliente("Laura", "calle", "mari", "123456789", 23);
+//				pizzeria.addCliente(c);
+//		Pizza p = new Pizza("Margarita", "tomate,queso", 12);
+//		Pizza pepperoni = new Pizza("Pepperoni", "tomate,mozzarella,pepperoni", 9.50);
+//        Pizza cuatroQuesos = new Pizza("Cuatro Quesos", "mozzarella,gorgonzola,parmesano,queso de cabra", 10.00);
+//        Pizza hawaiana = new Pizza("Hawaiana", "tomate,mozzarella,jamon,piña", 30.00);
+//			pizzeria.addPizza(p);
 		 int opcion;
 		do {
 			System.out.println("----Menú de la pizzeria----");
@@ -102,11 +101,9 @@ public class Main {
 				break;
 				
 			case 3:
-				Pedido pe = nuevoPedido(sc);
-				pizzeria.addPedido(pe);
-				
-				
-				
+				//Pedido pe = nuevoPedido(sc);
+				//pizzeria.addPedido(pe);
+				pizzeria.realizarPedido(sc);
 				break;
 			
 			case 4:
@@ -163,16 +160,18 @@ public class Main {
 			
 		}while(opcion >= 1 || opcion <=17);
 		
-		public static Pedido nuevoPedido(Scanner sc) {
-			System.out.println("Dame el ID del cliente: ");
-			int cliente = sc.nextInt();
-			System.out.println("Tipo de pedido: ");
-			String tipo = sc.next().toUpperCase();
-			
-			return new Pedido(cliente, tipo);
-			
-		}
+//		public static Pedido nuevoPedido(Scanner sc) {
+//			System.out.println("Dame el ID del cliente: ");
+//			int cliente = sc.nextInt();
+//			System.out.println("Tipo de pedido: ");
+//			String tipo = sc.next().toUpperCase();
+//			
+//			return new Pedido(cliente, tipo);
+//			
+//			}
+	}
 	
+}
 	
 //	public static Pizza nuevaPizza(Scanner sc) {
 //		System.out.println("Nombre:");
@@ -202,9 +201,7 @@ public class Main {
 //	}
 	
 	
-	}
-}
-
+	
 
 	
 

@@ -7,7 +7,7 @@ public class Cliente {
 	private String email;
 	private String telefono;
 	private double dineroDisponible;
-	private  static int contadorID = 1;
+	private static int contadorID = 1;
 	
 	public Cliente(String nombre, String direccion, String email, String telefono, double dineroDisponible) {
 		setNombre(nombre);
@@ -22,7 +22,6 @@ public class Cliente {
 	public int getId() {
 		return id;
 	}
-
 
 	public void setId(int id) {
 		this.id = contadorID++;

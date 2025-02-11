@@ -12,7 +12,7 @@ public class Pedido {
 	
 	private static int idCodigo = 1;
 	
-	public Pedido ( Cliente cliente, double total, String tipo) {
+	public Pedido (Cliente cliente, double total, String tipo) {
 		setCliente(cliente);
 		this.fecha = LocalDate.now();
 		setTotal(total);
@@ -67,13 +67,13 @@ public class Pedido {
 		this.tipo = Tipo.valueOf(tipo);
 	}
 	
-	public void addPizzaPedido(String nombrePizza) {
-		if(nombrePizza == null || nombrePizza.isBlank()) {
-			throw new IllegalArgumentException("No puede ser nulo o blanco");
-		}
-		boolean esta = false;
-		for(Pizza p : Pizzeria.)
-	}
+//	public void addPizzaPedido(String nombrePizza) {
+//		if(nombrePizza == null || nombrePizza.isBlank()) {
+//			throw new IllegalArgumentException("No puede ser nulo o blanco");
+//		}
+//		boolean esta = false;
+//		for(Pizza p : Pizzeria.)
+//	}
 	
 	public void mostrarInformacion() {
 		System.out.println("Pedido;" + this.id);
