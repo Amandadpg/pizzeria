@@ -101,9 +101,12 @@ public class Main {
 				break;
 				
 			case 3:
-				//Pedido pe = nuevoPedido(sc);
-				//pizzeria.addPedido(pe);
-				pizzeria.realizarPedido(sc);
+				System.out.println("ID del cliente:");
+				int idCliente = sc.nextInt();
+				Cliente cliente = buscarClientePorId(idCliente);
+				
+				System.out.println("Tipo de pedido:");
+				String tipo = sc.next().toUpperCase();
 				break;
 			
 			case 4:

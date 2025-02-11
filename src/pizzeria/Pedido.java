@@ -1,6 +1,8 @@
 package pizzeria;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Pedido {
 
@@ -9,15 +11,17 @@ public class Pedido {
 	private LocalDate fecha;
 	private double total;
 	private Tipo tipo;
+	private List<Pizza> pizzas;
 	
 	private static int idCodigo = 1;
 	
-	public Pedido (Cliente cliente, double total, String tipo) {
+	public Pedido (Cliente cliente,  String tipo) {
 		setCliente(cliente);
 		this.fecha = LocalDate.now();
-		setTotal(total);
+		setTotal(0);
 		setTipo(tipo);
 		this.id = idCodigo++;
+		this.pizzas = new ArrayList<Pizza>();
 		
 	}
 
@@ -67,13 +71,26 @@ public class Pedido {
 		this.tipo = Tipo.valueOf(tipo);
 	}
 	
-//	public void addPizzaPedido(String nombrePizza) {
-//		if(nombrePizza == null || nombrePizza.isBlank()) {
-//			throw new IllegalArgumentException("No puede ser nulo o blanco");
-//		}
-//		boolean esta = false;
-//		for(Pizza p : Pizzeria.)
-//	}
+	public void addPizzaPedido(List<Pizza> pizzas) {
+		if(pizzas == null || pizzas.isEmpty()) {
+			throw new IllegalArgumentException("No puede ser nulo o blanco");
+		}
+		for(Pizza p : pizzas) {
+			pizzas.add(p);
+			this.total = this.total + p.getPrecio();
+			
+		}
+	}
+	public void deletePizzaPedido(List<Pizza> pizzas) {
+		if(pizzas == null || pizzas.isEmpty()) {
+			throw new IllegalArgumentException("No puede ser nulo o blanco");
+		}
+		for(Pizza p : pizzas) {
+			pizzas.remove(p);
+			this.total = this.total - p.getPrecio();
+			
+		}
+	}
 	
 	public void mostrarInformacion() {
 		System.out.println("Pedido;" + this.id);
