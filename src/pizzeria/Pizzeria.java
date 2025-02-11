@@ -19,11 +19,11 @@ public class Pizzeria {
 		
 	}
 
- public void addPizza(Pizza p){
-	 if(p == null){
+ public void addPizza(Pizza pi){
+	 if(pi == null){
 		throw new IllegalArgumentException("La pizza no puede ser nula");
 	 }
-	 pizza.add(p);
+	 pizza.add(pi);
  }
 	
  public void addCliente(Cliente c) {
@@ -37,6 +37,13 @@ public class Pizzeria {
 	}
 	cliente.add(c);
  }
+ 
+ public void addPedido(Pedido pe) {
+	 if(pe == null){
+			throw new IllegalArgumentException("El pedido no puede ser nula");
+		 }
+	 pedido.add(pe);
+	}
  
  public void verPedidos() {
      if (pedido.isEmpty()) {
@@ -116,6 +123,21 @@ public class Pizzeria {
 		}
 	}
  
+ public void realizarPedido(Scanner sc) {
+	 Cliente cliente = cliente.getId();
+//	
+//	 
+//     if (cliente.getDineroDisponible() >= pizza.getPrecio()) {
+//    	 double total = pizza.getPrecio();
+//         Pedido pedido = new Pedido(cliente, total, tipo);
+//         this.addPedido(pedido);
+//         Pedido ultimoPedido = pedido;
+//         System.out.println("Pedido realizado con éxito.");
+//     } 
+//     else {
+//         System.out.println("Dinero insuficiente.");
+//     }
+ }
  
 
 }

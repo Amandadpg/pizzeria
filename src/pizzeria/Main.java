@@ -1,5 +1,6 @@
 package pizzeria;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
@@ -99,17 +100,26 @@ public class Main {
 			
 				pizzeria.addCliente(new Cliente(nombreCliente, direccion, email, telefono, dineroDisponible));
 				break;
+				
+			case 3:
+				Pedido pe = realizarPedido(sc);
+				pizzeria.addPedido(pe);
+				
+				
+				break;
 			
 			case 4:
 				pizzeria.verPizzas();
 				break;
-
+				
+			case 5:
+				pizzeria.verPedidos();
+				break;
 				
 			case 6:
 				pizzeria.verClientes();
 				break;
 
-				
 			case 7:
 				pizzeria.buscarClientePorTelefono(sc);
 				break;
@@ -121,14 +131,24 @@ public class Main {
 			case 9:
 				pizzeria.pizzasSinIngrediente(sc);
 				break;
+				
+			case 10:
+				pizzeria.verPedidos();
+				break;
+				
+			case 11: 
+				
+				
 			case 14:
 				Pizza.pizzaMasCara.getPrecio();
 				Pizza.pizzaMasCara.mostrarInformación();
 				break;
+				
 			case 15:
 				Pizza.pizzaMasBarata.getPrecio();
 				Pizza.pizzaMasBarata.mostrarInformación();
 				break;
+				
 			default:
                 System.out.println("Opción no válida. Intenta de nuevo.");
                 System.out.println("------------------------------");
