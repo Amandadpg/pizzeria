@@ -106,6 +106,7 @@ public void mostrarPizzaPedido() {
 		System.out.println("Fecha:" + fecha);
 		System.out.println("Total del pedido:" + total);
 		System.out.println("Tipo de pedido:" + tipo);
+		System.out.println("Pizzas en el pedido: ");
 		for(Pizza pizza : pizzas ) {
 			System.out.println(" - " + pizza.getNombre());
 		}

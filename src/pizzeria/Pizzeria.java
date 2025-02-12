@@ -160,15 +160,14 @@ public class Pizzeria {
 		if(pedido == null || pedido.size() == 0) {
 			throw new IllegalArgumentException("No hay pedido");
 		}
-		System.out.println("Pizzas en el pedido: ");
 		for(Pedido pedido : this.pedido) {
 			pedido.mostrarInformacion();
 			System.out.println();
 		
 		}
 	}
-	
-	
+}
+
 //	public void realizarPedido(Scanner sc) {
 //		System.out.println("ID del cliente:");
 //		int idCliente = sc.nextInt();
@@ -193,6 +192,6 @@ public class Pizzeria {
 //     else {
 //         System.out.println("Dinero insuficiente.");
 //     }
-	}
+	
 
 
