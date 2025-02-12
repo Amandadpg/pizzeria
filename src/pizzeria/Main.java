@@ -140,8 +140,12 @@ public class Main {
 
 				} while (p1 != 0);
 				
-				break;
+//				if(Cliente.getDineroDisponible >= Pedido.getTotal) {
+//					Cliente.getDineroDisponible -= 
+//				}
 				
+				break;
+				 
 			case 4:
 				
 				pizzeria.verPizzas();

@@ -104,6 +104,14 @@ public class Cliente {
 		 System.out.println("------------------------------");
 		 System.out.println();
 	}
-
+	
+	
+//	public void gastar(double total) {
+//		if(total > dineroDisponible) {
+//			throw new IllegalArgumentException("No tienes dinero disponible");
+//		}else {
+//			dineroDisponible -= total;
+//		}
+//	}
 	
 }
