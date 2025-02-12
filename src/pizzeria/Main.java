@@ -105,7 +105,7 @@ public class Main {
 				break;
 				
 			case 3:
-				Pedido pe = nuevoPedido(sc);
+				Pedido pe = nuevoPedido(sc, pizzeria);
 				pizzeria.addPedido(pe);
 				
 				int p1;
@@ -237,9 +237,11 @@ public class Main {
 		}while(opcion !=17);
 	}
 		
-		public static Pedido nuevoPedido(Scanner sc) {
+		public static Pedido nuevoPedido(Scanner sc, Pizzeria p) {
 			System.out.println("Dame el ID del cliente: ");
-			int cliente = sc.nextInt();
+			int idCliente = sc.nextInt();
+			Cliente cliente = p.buscarClientePorId(idCliente);
+			
 			System.out.println("Tipo de pedido: ");
 			String tipo = sc.next().toUpperCase();
 			
