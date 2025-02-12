@@ -7,8 +7,8 @@ import java.util.Scanner;
 public class Pizzeria {
 
 	private List<Cliente> cliente;
-	private List<Pizza> pizza;
-	private List<Pedido> pedido;
+	private static List<Pizza> pizza;
+	private static List<Pedido> pedido;
 
 	public Pizzeria() {
 
@@ -16,6 +16,14 @@ public class Pizzeria {
 		this.pizza = new ArrayList<Pizza>();
 		this.pedido = new ArrayList<Pedido>();
 
+	}
+	
+	public static  List<Pizza> getPizza(){
+		return pizza;
+	}
+	
+	public static List<Pedido> getPedido(){
+		return pedido;
 	}
 
 	public void addPizza(Pizza pi) {
@@ -41,11 +49,7 @@ public class Pizzeria {
 		if (pe == null) {
 			throw new IllegalArgumentException("El pedido no puede ser nula");
 		}
-		for(Pedido pedido : this.pedido) {
-			if(pedido.getId() == pe.getId()) {
-				throw new IllegalArgumentException("El pedido ya ha sido realizado");
-			}
-		}
+		
 		pedido.add(pe);
 	}
 
@@ -153,10 +157,13 @@ public class Pizzeria {
 	} 
 	
 	public void mostrarPedido() {
-		System.out.println("El pedido del cliente: " + cliente.toString());
+		if(pedido == null || pedido.size() == 0) {
+			throw new IllegalArgumentException("No hay pedido");
+		}
 		System.out.println("Pizzas en el pedido: ");
-		for(Pizza pizza : pizza) {
-			System.out.println(pizza);
+		for(Pedido pedido : this.pedido) {
+			pedido.mostrarInformacion();
+			System.out.println();
 		
 		}
 	}

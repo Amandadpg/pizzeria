@@ -100,14 +100,34 @@ public class Main {
 				break;
 				
 			case 3:
-				System.out.println("ID del cliente:");
-				String idCliente = sc.next();
+				Pedido pe = nuevoPedido(sc);
+				pizzeria.addPedido(pe);
 				
-				System.out.println("Tipo de pedido:");
-				String tipo = sc.next().toUpperCase();
-			
+				int p1;
+
+				do {
+
+					System.out.println("¿Qué pizza quieres añadir?");
+					pizzeria.verPizzas();
+
+					System.out.println("Si no quieres añadir más pizzas presiona 0.");
+					p1 = sc.nextInt();
+					if (p1 != 0) {
+						pe.addPizzaPedido(p1);
+					}
+
+				} while (p1 != 0);
+				do {
+					System.out.println("¿Que pizza quieres elimian?");
+					pe.mostrarPizzaPedido();
+					System.out.println("Si no quieres eliminar las pizzas, pulsa 0. ");
+					p1 = sc.nextInt();
+					if (p1 != 0) {
+						pe.deletePizzaPedido(p1);
+					}
+
+				} while (p1 != 0);
 				
-				pizzeria.mostrarPedido();
 				break;
 				
 			case 4:
@@ -119,7 +139,7 @@ public class Main {
 		
 			case 5:
 			
-				// Falta este
+				pizzeria.mostrarPedido();
 				
 				break;
 				
@@ -197,20 +217,24 @@ public class Main {
 			
 			
 		}while(opcion >= 1 || opcion <=17);
-		
-//		public static Pedido nuevoPedido(Scanner sc) {
-//			System.out.println("Dame el ID del cliente: ");
-//			int cliente = sc.nextInt();
-//			System.out.println("Tipo de pedido: ");
-//			String tipo = sc.next().toUpperCase();
-//			
-//			return new Pedido(cliente, tipo);
-//			
-//			}
 	}
+		
+		public static Pedido nuevoPedido(Scanner sc) {
+			System.out.println("Dame el ID del cliente: ");
+			int cliente = sc.nextInt();
+			System.out.println("Tipo de pedido: ");
+			String tipo = sc.next().toUpperCase();
+			
+			return new Pedido(cliente, tipo);
+			
+
+		}
+		{
+}
+
 	
 }
-	
+
 //	public static Pizza nuevaPizza(Scanner sc) {
 //		System.out.println("Nombre:");
 //		String nombre = sc.next();
