@@ -72,8 +72,8 @@ public class Pedido {
 		this.tipo = Tipo.valueOf(tipo);
 	}
 	
-	public void addPizzaPedido(List<Pizza> pizzas) {
-		if(pizzas == null || pizzas.isEmpty()) {
+	public void addPizzaPedido(int idPizza) {
+		if(idPizza <= 0) {
 			throw new IllegalArgumentException("No puede ser nulo o blanco");
 		}
 		
@@ -83,8 +83,8 @@ public class Pedido {
 			
 		}
 	}
-	public void deletePizzaPedido(List<Pizza> pizzas) {
-		if(pizzas == null || pizzas.isEmpty()) {
+	public void deletePizzaPedido(int idPizza) {
+		if(idPizza <= 0) {
 			throw new IllegalArgumentException("No puede ser nulo o blanco");
 		}
 		for(Pizza p : pizzas) {
