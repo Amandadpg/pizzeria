@@ -168,17 +168,7 @@ public class Pizzeria {
 		}
 	}
 	
-	public void addPizzaPedido(List<Pizza> pizzas) {
-		if(pizzas == null || pizzas.isEmpty()) {
-			throw new IllegalArgumentException("No puede ser nulo o blanco");
-		}
-		for(Pizza p : pizzas) {
-			pizzas.add(p);
-			this.total = this.total + p.getPrecio();
-			
-		}
-	}
-
+	
 //	public void realizarPedido(Scanner sc) {
 //		System.out.println("ID del cliente:");
 //		int idCliente = sc.nextInt();
