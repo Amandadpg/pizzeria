@@ -49,20 +49,21 @@ public class Main {
 			System.out.println("1. Nueva pizza");
 			System.out.println("2. Nuevo cliente");
 			System.out.println("3. Realizar un pedido");
-			System.out.println("4. Ver pizzas");
-			System.out.println("5. Ver pedidos");
-			System.out.println("6. Ver clientes");
-			System.out.println("7. Consultar clientes mediante su teléfono");
-			System.out.println("8. Buscar pizza con ingrediente");
-			System.out.println("9. Buscar pizza sin ingrediente");
-			System.out.println("10. Pedidos de hoy");
-			System.out.println("11. Pedidos consumidos en el local");
-			System.out.println("12. Pedidos para recoger");
-			System.out.println("13. Pedidos a domicilio ");
-			System.out.println("14. Pizza más cara");
-			System.out.println("15. Pizza más barata");
-			System.out.println("16. Último pedido realizado");
-			System.out.println("17. Salir");
+			System.out.println("4. Eliminar un pedido");
+			System.out.println("5. Ver pizzas");
+			System.out.println("6. Ver pedidos");
+			System.out.println("7. Ver clientes");
+			System.out.println("8. Consultar clientes mediante su teléfono");
+			System.out.println("9. Buscar pizza con ingrediente");
+			System.out.println("10. Buscar pizza sin ingrediente");
+			System.out.println("11. Pedidos de hoy");
+			System.out.println("12. Pedidos consumidos en el local");
+			System.out.println("13. Pedidos para recoger");
+			System.out.println("14. Pedidos a domicilio ");
+			System.out.println("15. Pizza más cara");
+			System.out.println("16. Pizza más barata");
+			System.out.println("17. Último pedido realizado");
+			System.out.println("18. Salir");
 			
 			
 			opcion = sc.nextInt();
@@ -129,7 +130,7 @@ public class Main {
 				} while (p1 != 0);
 				
 				break;
-				
+				//Mejorar
 			case 4:
 				
 				pizzeria.verPizzas();
@@ -139,8 +140,13 @@ public class Main {
 		
 			case 5:
 			
+<<<<<<< Updated upstream
 				pizzeria.mostrarPedido();
 				
+=======
+				pizzeria.verPedidos();
+				//Terminar
+>>>>>>> Stashed changes
 				break;
 				
 			case 6:
@@ -174,10 +180,17 @@ public class Main {
 				
 				break;
 		
-				
 			case 11: 
+				pizzeria.mostrarPedidosLocal();
+				break;
 				
-				// Falta este
+			case 12:
+				pizzeria.mostrarPedidosRecoger();
+				break;
+				
+			case 13:
+				pizzeria.mostrarPedidosDomicilio();
+				break;
 				
 			case 14:
 				
