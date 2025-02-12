@@ -3,6 +3,7 @@ package pizzeria;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 public class Pedido {
 
@@ -118,6 +119,18 @@ public class Pedido {
 		for (Pizza pizza : pizzas) {
 			System.out.println(" - " + pizza.getNombre());
 		}
+	}
+	
+	public static Pedido nuevoPedido(Scanner sc, Pizzeria p) {
+		System.out.println("Dame el ID del cliente: ");
+		int idCliente = sc.nextInt();
+		Cliente cliente = p.buscarClientePorId(idCliente);
+		
+		System.out.println("Tipo de pedido: ");
+		String tipo = sc.next().toUpperCase();
+		
+		
+		return new Pedido(cliente, tipo);
 	}
 
 }

@@ -21,11 +21,11 @@ public class Pizzeria {
 
 	}
 	
-	public  List<Pizza> getPizza(){
+	public   List<Pizza> getPizza(){
 		return pizzas;
 	}
 	
-	public List<Pedido> getPedido(){
+	public  List<Pedido> getPedido(){
 		return pedidos;
 	}
 
@@ -128,7 +128,7 @@ public class Pizzeria {
 		return c;
 	}
 	
-	public Pizza buscarPizzaId(int id) {
+	public Pizza buscarPizzaPorId(int id) {
 		Pizza p = null;
 		for (Pizza pizza : pizzas) {
 			if (pizza.getId() == id) {
@@ -176,9 +176,9 @@ public void mostrarPedidosLocal() {
 	System.out.println(" Pedidos Consumidos en el Local:");
     boolean hayPedidosLocal = false;
     
-    for (Pedido pedido : this.pedidos) {
+    for (Pedido pedido : pedidos) {
         if (pedido.getTipo().equals("LOCAL")) {
-            mostrarPedido();
+            pedido.mostrarInformacion();
             hayPedidosLocal = true;
         }
     }
@@ -193,9 +193,9 @@ public void mostrarPedidosRecoger() {
 	System.out.println(" Pedidos Consumidos para recoger:");
     boolean hayPedidosRecoger = false;
     
-    for (Pedido p : pedidos) {
-        if (p.getTipo().equals("RECOGER")) {
-            mostrarPedido();
+    for (Pedido pedido : pedidos) {
+        if (pedido.getTipo().equals("RECOGER")) {
+        	pedido.mostrarInformacion();
             hayPedidosRecoger = true;
         }
     }
@@ -209,9 +209,9 @@ public void mostrarPedidosDomicilio() {
 	System.out.println(" Pedidos Consumidos para domicilio:");
     boolean hayPedidosDomicilio = false;
     
-    for (Pedido p : pedidos) {
-        if (p.getTipo().equals("DOMICILIO")) {
-            mostrarPedido();
+    for (Pedido pedido : pedidos) {
+        if (pedido.getTipo().equals("DOMICILIO")) {
+        	pedido.mostrarInformacion();
             hayPedidosDomicilio = true;
         }
     }
@@ -227,31 +227,42 @@ public void mostrarNombrePizza() {
 		System.out.println(" -" + pizza.getId() + " " + pizza.getNombre());
 	}
 }
-public void mostrarUltimoPedido() {
-    System.out.println("Último Pedido Realizado:");
-    
-    if (pedidos.isEmpty()) {
-        System.out.println("No hay pedidos registrados aún.");
-    } else {
-        Pedido ultimo = pedidos.get(pedidos.size() - 1);  
-        mostrarPedido();
-    }
-}
 
 
-public void mostrarPedidosHoy() {
-	LocalDateTime inicio = LocalDateTime.of(LocalDate.now(), LocalTime.NOON);
-	LocalDateTime fin = LocalDateTime.of(LocalDate.now(), LocalTime.MAX);
-	
-	for(Pedido p : pedidos) {
-		if(p.getFecha().isAfter(inicio) && p.getFecha().isBefore(fin)) {
-			p.mostrarInformacion();
+	public Pizza buscarPizzaId(int idPizza) {
+		Pizza pizza = null;
+		
+		for(Pizza p : this.pizzas) {
+			if(p.getId() == idPizza) {
+				pizza = p;
+			}
 		}
+		
+		return pizza;
+	}
+	public void mostrarPedidosHoy() {
+		LocalDateTime inicio = LocalDateTime.of(LocalDate.now(), LocalTime.NOON);
+		LocalDateTime fin = LocalDateTime.of(LocalDate.now(), LocalTime.MAX);
+		
+		for(Pedido p : pedidos) {
+			if(p.getFecha().isAfter(inicio) && p.getFecha().isBefore(fin)) {
+				p.mostrarInformacion();
+			}
+		}
+		
+	}
+	public void mostrarUltimoPedido() {
+	    System.out.println("Último Pedido Realizado:");
+	    
+	    if (pedidos.isEmpty()) {
+	        System.out.println("No hay pedidos registrados aún.");
+	    } else {
+	        Pedido ultimo = pedidos.get(pedidos.size() - 1);  
+	        ultimo.mostrarInformacion();
+	    }
 	}
 	
-}
 
-}
 
 //	public void realizarPedido(Scanner sc) {
 //		System.out.println("ID del cliente:");
@@ -267,16 +278,17 @@ public void mostrarPedidosHoy() {
 //		
 //	
 //	 
-//     if (cliente.getDineroDisponible() >= pizza.getPrecio()) {
-//    	 double total = pizza.getPrecio();
-//         Pedido pedido = new Pedido(cliente, total, tipo);
-//         this.addPedido(pedido);
-//         Pedido ultimoPedido = pedido;
+//	if (cliente.getDineroDisponible() >= pizza.getPrecio()) {
+//   	 double total = pizzas.getPrecio();
+//        Pedido pedido = new Pedido(clientes, total, tipo);
+//        this.addPedido(pedido);
+//       Pedido ultimoPedido = pedido;
 //         System.out.println("Pedido realizado con éxito.");
 //     } 
-//     else {
-//         System.out.println("Dinero insuficiente.");
-//     }
+//    else {
+//        System.out.println("Dinero insuficiente.");
+//    }
+//	
+//	}
+	}
 	
-
-

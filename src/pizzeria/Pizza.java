@@ -1,5 +1,7 @@
 package pizzeria;
 
+import java.util.Scanner;
+
 public class Pizza {
 	private String nombre;
 	private String ingredientes;
@@ -95,4 +97,5 @@ public class Pizza {
 	
 	
 	}	
+	
 }
