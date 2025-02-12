@@ -173,8 +173,8 @@ public void mostrarPedidosLocal() {
 	System.out.println(" Pedidos Consumidos en el Local:");
     boolean hayPedidosLocal = false;
     
-    for (Pedido p : pedido) {
-        if (p.getTipo().equals(Tipo.LOCAL)) {
+    for (Pedido pedido : this.pedido) {
+        if (pedido.getTipo().equals("LOCAL")) {
             mostrarPedido();
             hayPedidosLocal = true;
         }
@@ -191,7 +191,7 @@ public void mostrarPedidosRecoger() {
     boolean hayPedidosRecoger = false;
     
     for (Pedido p : pedido) {
-        if (p.getTipo().equals(Tipo.RECOGER)) {
+        if (p.getTipo().equals("RECOGER")) {
             mostrarPedido();
             hayPedidosRecoger = true;
         }
@@ -207,7 +207,7 @@ public void mostrarPedidosDomicilio() {
     boolean hayPedidosDomicilio = false;
     
     for (Pedido p : pedido) {
-        if (p.getTipo().equals(Tipo.DOMICILIO)) {
+        if (p.getTipo().equals("DOMICILIO")) {
             mostrarPedido();
             hayPedidosDomicilio = true;
         }
@@ -216,6 +216,13 @@ public void mostrarPedidosDomicilio() {
     if (!hayPedidosDomicilio) {
         System.out.println("No hay pedidos consumidos para el domicilio.");
     }
+}
+
+
+public void mostrarNombrePizza() {
+	for(Pizza pizza : pizza) {
+		System.out.println(" -" + pizza.getId() + " " + pizza.getNombre());
+	}
 }
 }
 

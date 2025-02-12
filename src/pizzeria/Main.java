@@ -118,7 +118,7 @@ public class Main {
 
 				} while (p1 != 0);
 				do {
-					System.out.println("¿Que pizza quieres elimian?");
+					System.out.println("¿Que pizza quieres eliminar?");
 					pe.mostrarPizzaPedido();
 					System.out.println("Si no quieres eliminar las pizzas, pulsa 0. ");
 					p1 = sc.nextInt();
@@ -169,7 +169,6 @@ public class Main {
 				
 			case 10:
 				
-				
 				pizzeria.verPedidos();
 				
 				break;
@@ -184,7 +183,7 @@ public class Main {
 				break;
 				
 			case 13:
-				pizzeria.mostrarPedidosRecoger();
+				pizzeria.mostrarPedidosDomicilio();
 				break;
 				
 			case 14:
