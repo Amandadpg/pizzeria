@@ -25,21 +25,26 @@ public class Pizzeria {
 		pizza.add(pi);
 	}
 
-	public void addCliente(Cliente c) {
-		if (c == null) {
+	public void addCliente(Cliente cli) {
+		if (cli == null) {
 			throw new IllegalArgumentException("El cliente no puede ser nulo");
 		}
 		for (Cliente cliente : this.cliente) {
-			if (cliente.getId() == c.getId()) {
+			if (cliente.getId() == cli.getId()) {
 				throw new IllegalArgumentException("El comprador ya ha sido añadido");
 			}
 		}
-		cliente.add(c);
+		cliente.add(cli);
 	}
 
 	public void addPedido(Pedido pe) {
 		if (pe == null) {
 			throw new IllegalArgumentException("El pedido no puede ser nula");
+		}
+		for(Pedido pedido : this.pedido) {
+			if(pedido.getId() == pe.getId()) {
+				throw new IllegalArgumentException("El pedido ya ha sido realizado");
+			}
 		}
 		pedido.add(pe);
 	}
@@ -49,8 +54,9 @@ public class Pizzeria {
 			System.out.println("No hay pedidos registrados.");
 		} else {
 			System.out.println("Lista de pedidos:");
+			int contadorPedidos = 1;
 			for (Pedido p : pedido) {
-				System.out.println(p);
+				System.out.println(contadorPedidos + ". " + pedido);
 			}
 		}
 	}
@@ -88,6 +94,8 @@ public class Pizzeria {
 			}
 		}
 	}
+	
+	
 
 	public void buscarClientePorTelefono(Scanner sc) {
 		System.out.println("Telefono:");
@@ -98,6 +106,7 @@ public class Pizzeria {
 
 			}
 		}
+		
 
 	}
 
@@ -142,6 +151,26 @@ public class Pizzeria {
 			}
 		}
 	} 
+	
+	public void mostrarPedido() {
+		System.out.println("El pedido del cliente: " + cliente.toString());
+		System.out.println("Pizzas en el pedido: ");
+		for(Pizza pizza : pizza) {
+			System.out.println(pizza);
+		
+		}
+	}
+	
+	public void addPizzaPedido(List<Pizza> pizzas) {
+		if(pizzas == null || pizzas.isEmpty()) {
+			throw new IllegalArgumentException("No puede ser nulo o blanco");
+		}
+		for(Pizza p : pizzas) {
+			pizzas.add(p);
+			this.total = this.total + p.getPrecio();
+			
+		}
+	}
 
 //	public void realizarPedido(Scanner sc) {
 //		System.out.println("ID del cliente:");

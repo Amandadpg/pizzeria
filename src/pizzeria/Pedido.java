@@ -23,6 +23,7 @@ public class Pedido {
 		this.id = idCodigo++;
 		this.pizzas = new ArrayList<Pizza>();
 		
+		
 	}
 
 	public int getId() {
@@ -91,6 +92,8 @@ public class Pedido {
 			
 		}
 	}
+	
+
 	
 	public void mostrarInformacion() {
 		System.out.println("Pedido;" + this.id);

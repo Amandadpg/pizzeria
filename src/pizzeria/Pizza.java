@@ -4,8 +4,7 @@ public class Pizza {
 	private String nombre;
 	private String ingredientes;
 	private double precio;
-	private int id;
-	
+	private int idPizza;
 	
 	
 	private static int contadorId=1;
@@ -19,7 +18,7 @@ public class Pizza {
 		setNombre(nombre);
 		setIngredientes(ingredientes);
 		setPrecio(precio);
-		this.id= contadorId++;
+		this.idPizza= contadorId++;
 		if(pizzaMasCara == null || this.precio > pizzaMasCara.precio) {
 			pizzaMasCara = this;
 		}
@@ -31,12 +30,12 @@ public class Pizza {
 
 
 	public int getId() {
-		return id;
+		return idPizza;
 	}
 
 
 	public void setId(int id) {
-		this.id = contadorId++;
+		this.idPizza = contadorId++;
 	}
 
 

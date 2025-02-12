@@ -72,8 +72,6 @@ public class Main {
 			
 			switch(opcion) {
 			case 1:
-//				Pizza p = nuevaPizza (sc);
-			//	pizzeria.addPizza(p);
 				System.out.println("Nombre:");
 				String nombrePizza = sc.next();
 				System.out.println("Ingredientes: ");
@@ -82,6 +80,7 @@ public class Main {
 				double precio = sc.nextDouble();
 
 				pizzeria.addPizza(new Pizza(nombrePizza, ingredientes, precio));
+				
 				break;
 
 				
@@ -102,54 +101,90 @@ public class Main {
 				
 			case 3:
 				System.out.println("ID del cliente:");
-				int idCliente = sc.nextInt();
-				Cliente cliente = buscarClientePorId(idCliente);
+				String idCliente = sc.next();
 				
 				System.out.println("Tipo de pedido:");
 				String tipo = sc.next().toUpperCase();
-				break;
 			
-			case 4:
-				pizzeria.verPizzas();
+				
+				pizzeria.mostrarPedido();
 				break;
 				
+			case 4:
+				
+				pizzeria.verPizzas();
+				
+				break;
+				
+		
 			case 5:
-				pizzeria.verPedidos();
+			
+				// Falta este
+				
 				break;
 				
 			case 6:
+			
 				pizzeria.verClientes();
+				
 				break;
 
 			case 7:
+				
 				pizzeria.buscarClientePorTelefono(sc);
+				
 				break;
 				
 			case 8:
+				
 				pizzeria.pizzasConIngrediente(sc);
+			
 				break;
 				
 			case 9:
+				
 				pizzeria.pizzasSinIngrediente(sc);
+			
 				break;
 				
 			case 10:
+				
+				// Falta este por terminar(hacer el pedido)
 				pizzeria.verPedidos();
+				
 				break;
+		
 				
 			case 11: 
 				
+				// Falta este
 				
 			case 14:
+				
 				Pizza.pizzaMasCara.getPrecio();
 				Pizza.pizzaMasCara.mostrarInformación();
+				
 				break;
 				
 			case 15:
+				
 				Pizza.pizzaMasBarata.getPrecio();
 				Pizza.pizzaMasBarata.mostrarInformación();
-				break;
 				
+				break;
+			
+			case 16:
+				
+				// Falta este	
+				
+				break;
+			
+			case 17:
+				
+				System.out.println("Saliendo del programa, ¡Que aproveche!");
+				
+				break;
+			
 			default:
                 System.out.println("Opción no válida. Intenta de nuevo.");
                 System.out.println("------------------------------");
