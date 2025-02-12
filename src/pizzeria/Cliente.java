@@ -7,10 +7,9 @@ public class Cliente {
 	private String email;
 	private String telefono;
 	private double dineroDisponible;
-	
-	
+
 	private static int contadorID = 1;
-	
+
 	public Cliente(String nombre, String direccion, String email, String telefono, double dineroDisponible) {
 		setNombre(nombre);
 		setDireccion(direccion);
@@ -18,19 +17,17 @@ public class Cliente {
 		setTelefono(telefono);
 		setDineroDisponible(dineroDisponible);
 		this.idCliente = contadorID++;
-		
+
 	}
-	
-	
+
 	public int getId() {
 		return idCliente;
 	}
 
 	public void setId(int contadorID) {
 		this.idCliente = contadorID++;
-		
-	}
 
+	}
 
 	public String getNombre() {
 		return nombre;
@@ -70,10 +67,10 @@ public class Cliente {
 	}
 
 	public void setTelefono(String telefono) {
-		if(telefono == null || telefono.isBlank()) {
+		if (telefono == null || telefono.isBlank()) {
 			throw new IllegalArgumentException("El telefono no puede ser vacío, ni en blanco, ni nulo");
 		}
-		if(telefono.length() != 9) {
+		if (telefono.length() != 9) {
 			throw new IllegalArgumentException("El telefono debe tener 9 caracteres");
 		}
 		this.telefono = telefono;
@@ -84,34 +81,23 @@ public class Cliente {
 	}
 
 	public void setDineroDisponible(double dineroDisponible) {
-		if(dineroDisponible < 0) {
+		if (dineroDisponible < 0) {
 			throw new IllegalArgumentException("El dinero disponible no puede ser negativo");
 		}
 		this.dineroDisponible = dineroDisponible;
 	}
 
+	// metodos
 
-	//metodos
-	
 	public void Info() {
 		System.out.println("nombre: " + this.nombre);
 		System.out.println("Direccion: " + this.direccion);
 		System.out.println("Email: " + this.email);
 		System.out.println("Telefono: " + telefono);
 		System.out.println("Dinero disponible: " + dineroDisponible);
-		
-		
-		 System.out.println("------------------------------");
-		 System.out.println();
+
+		System.out.println("------------------------------");
+		System.out.println();
 	}
-	
-	
-//	public void gastar(double total) {
-//		if(total > dineroDisponible) {
-//			throw new IllegalArgumentException("No tienes dinero disponible");
-//		}else {
-//			dineroDisponible -= total;
-//		}
-//	}
-	
+
 }

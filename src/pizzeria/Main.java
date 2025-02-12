@@ -6,22 +6,13 @@ public class Main {
 
 	public static void main(String[] args) {
 		menu();
-	
-		
-		
-		
-		
-		
-		
+
 	}
+
 	public static void menu() {
-		
-		
-        Pizzeria pizzeria = new Pizzeria();
-        
-        
-        
-        
+
+		Pizzeria pizzeria = new Pizzeria();
+
 		Scanner sc = new Scanner(System.in);
 
 //		Cliente c = new Cliente("Laura", "calle", "mari", "123456789", 23);
@@ -33,7 +24,7 @@ public class Main {
 //			pizzeria.addPizza(p);
 //			pizzeria.addPizza(pepperoni);
 //		
-		 int opcion;
+		int opcion;
 		do {
 			System.out.println("----Menú de la pizzeria----");
 			System.out.println("Bienvenido a nuestra pizzeria, seleccione una opción:");
@@ -54,14 +45,13 @@ public class Main {
 			System.out.println("15. Pizza más barata");
 			System.out.println("16. Último pedido realizado");
 			System.out.println("17. Salir");
-			
-			
+
 			opcion = sc.nextInt();
-			
+
 			System.out.println();
 			System.out.println();
-			
-			switch(opcion) {
+
+			switch (opcion) {
 			case 1:
 				System.out.println("Nombre:");
 				String nombrePizza = sc.next();
@@ -71,10 +61,9 @@ public class Main {
 				double precio = sc.nextDouble();
 
 				pizzeria.addPizza(new Pizza(nombrePizza, ingredientes, precio));
-				
+
 				break;
 
-				
 			case 2:
 				System.out.println("Nombre:");
 				String nombreCliente = sc.next();
@@ -86,14 +75,14 @@ public class Main {
 				String telefono = sc.next();
 				System.out.println("Dinero disponible: ");
 				double dineroDisponible = sc.nextDouble();
-			
+
 				pizzeria.addCliente(new Cliente(nombreCliente, direccion, email, telefono, dineroDisponible));
 				break;
-				
+
 			case 3:
 				Pedido pe = Pedido.nuevoPedido(sc, pizzeria);
 				pizzeria.addPedido(pe);
-				
+
 				int p1;
 
 				do {
@@ -105,8 +94,8 @@ public class Main {
 					p1 = sc.nextInt();
 					if (p1 != 0) {
 						Pizza pizza = pizzeria.buscarPizzaId(p1);
-						
-						if(pizza != null) {
+
+						if (pizza != null) {
 							pe.addPizzaPedido(pizza);
 						}
 					}
@@ -119,160 +108,117 @@ public class Main {
 					p1 = sc.nextInt();
 					if (p1 != 0) {
 						Pizza pizza = pizzeria.buscarPizzaId(p1);
-						if(pizza != null) {
+						if (pizza != null) {
 							pe.deletePizzaPedido(pizza);
 						}
 					}
 
 				} while (p1 != 0);
-				
-//				if(Cliente.getDineroDisponible >= Pedido.getTotal) {
-//					Cliente.getDineroDisponible -= Pedido.total;
-//				}
-				
+
+				Cliente clientePedido = pe.getCliente();
+				if (clientePedido.getDineroDisponible() >= pe.getTotal()) {
+					clientePedido.setDineroDisponible(clientePedido.getDineroDisponible() - pe.getTotal());
+					System.out.println("Pedido Realizado correctamente");
+				} else {
+					System.out.println("No tienes dinero tieso");
+
+				}
+
 				break;
-				 
+
 			case 4:
-				
+
 				pizzeria.verPizzas();
-				
+
 				break;
-				
-		
+
 			case 5:
-			
+
 				pizzeria.mostrarPedido();
-				
+
 				break;
-				
+
 			case 6:
-			
+
 				pizzeria.verClientes();
-				
+
 				break;
 
 			case 7:
-				
+
 				pizzeria.buscarClientePorTelefono(sc);
-				
+
 				break;
-				
+
 			case 8:
-				
+
 				pizzeria.pizzasConIngrediente(sc);
-			
+
 				break;
-				
+
 			case 9:
-				
+
 				pizzeria.pizzasSinIngrediente(sc);
-			
+
 				break;
-				
+
 			case 10:
-				
+
 				pizzeria.mostrarPedidosHoy();
-				
+
 				break;
-		
-				
-			case 11: 
+
+			case 11:
 				pizzeria.mostrarPedidosLocal();
 				break;
-				
+
 			case 12:
 				pizzeria.mostrarPedidosRecoger();
 				break;
-				
+
 			case 13:
 				pizzeria.mostrarPedidosDomicilio();
 				break;
-				
+
 			case 14:
-				
+
 				Pizza.pizzaMasCara.getPrecio();
 				Pizza.pizzaMasCara.mostrarInformación();
-				
+
 				break;
-				
+
 			case 15:
-				
+
 				Pizza.pizzaMasBarata.getPrecio();
 				Pizza.pizzaMasBarata.mostrarInformación();
-				
+
 				break;
-			
+
 			case 16:
-				pizzeria.mostrarUltimoPedido();	
-				
+				pizzeria.mostrarUltimoPedido();
+
 				break;
-			
+
 			case 17:
-				
+
 				System.out.println("Saliendo del programa, ¡Que aproveche!");
-				
+
 				break;
-			
+
 			default:
-                System.out.println("Opción no válida. Intenta de nuevo.");
-                System.out.println("------------------------------");
-                System.out.println();
-                break;
+				System.out.println("Opción no válida. Intenta de nuevo.");
+				System.out.println("------------------------------");
+				System.out.println();
+				break;
 
 			}
-			
-		
-			
-			
-		}while(opcion !=17);
+
+		} while (opcion != 17);
+
 	}
-		
-//		public static Pedido nuevoPedido(Scanner sc, Pizzeria p) {
-//			System.out.println("Dame el ID del cliente: ");
-//			int idCliente = sc.nextInt();
-//			Cliente cliente = p.buscarClientePorId(idCliente);
-//			
-//			System.out.println("Tipo de pedido: ");
-//			String tipo = sc.next().toUpperCase();
-//			
-//			
-//			return new Pedido(cliente, tipo);
-//		}
-		{
+
+	{
+
+	}
+
 }
-
-	
-}
-
-//	public static Pizza nuevaPizza(Scanner sc) {
-//		System.out.println("Nombre:");
-//		String nombre = sc.next();
-//		System.out.println("Ingredientes: ");
-//		String ingredientes = sc.next();
-//		System.out.println("Precio: ");
-//		double precio = sc.nextDouble();
-//
-//		return new Pizza(nombre, ingredientes, precio);
-//	}
-
-//	public static Cliente nuevoCliente(Scanner sc) {
-//		System.out.println("Nombre:");
-//		String nombre = sc.next();
-//		System.out.println("Direccion: ");
-//		String direccion = sc.next();
-//		System.out.println("Email: ");
-//		String email = sc.next();
-//		System.out.println("Telefono: ");
-//		String telefono = sc.next();
-//		System.out.println("Dinero disponible: ");
-//		double dineroDisponible = sc.nextDouble();
-//	
-//		return new Cliente(nombre, direccion, email, telefono, dineroDisponible);
-//		// Cambio
-//	}
-	
-	
-	
-
-	
-

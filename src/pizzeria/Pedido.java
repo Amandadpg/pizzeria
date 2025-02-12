@@ -15,10 +15,10 @@ public class Pedido {
 	private List<Pizza> pizzas;
 
 	private static int idCodigo = 1;
-	
+
 	private static Pedido ultimoPedido;
-	
-	public Pedido (Cliente cliente,  String tipo) {
+
+	public Pedido(Cliente cliente, String tipo) {
 		this.cliente = cliente;
 		this.fecha = LocalDateTime.now();
 		setTotal(0);
@@ -35,19 +35,10 @@ public class Pedido {
 	public void setId(int id) {
 		this.id = id;
 	}
-	
-	
 
-//	public void setCliente(int idCliente) {
-//		if (idCliente <= 0) {
-//			throw new IllegalArgumentException("El ID no puede ser nulo");
-//		}
-//		this.idCliente = idCliente;
-//	}
-//
-//	public int getCliente() {
-//		return idCliente;
-//	}
+	public void comprobarDinero() {
+
+	}
 
 	public Cliente getCliente() {
 		return cliente;
@@ -120,16 +111,15 @@ public class Pedido {
 			System.out.println(" - " + pizza.getNombre());
 		}
 	}
-	
+
 	public static Pedido nuevoPedido(Scanner sc, Pizzeria p) {
 		System.out.println("Dame el ID del cliente: ");
 		int idCliente = sc.nextInt();
 		Cliente cliente = p.buscarClientePorId(idCliente);
-		
+
 		System.out.println("Tipo de pedido: ");
 		String tipo = sc.next().toUpperCase();
-		
-		
+
 		return new Pedido(cliente, tipo);
 	}
 
