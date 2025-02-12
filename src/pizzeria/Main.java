@@ -34,14 +34,19 @@ public class Main {
 		
 		
         Pizzeria pizzeria = new Pizzeria();
+        
+        
+        
+        
 		Scanner sc = new Scanner(System.in);
-//		Cliente c = new Cliente("Laura", "calle", "mari", "123456789", 23);
-//				pizzeria.addCliente(c);
-//		Pizza p = new Pizza("Margarita", "tomate,queso", 12);
-//		Pizza pepperoni = new Pizza("Pepperoni", "tomate,mozzarella,pepperoni", 9.50);
+		Cliente c = new Cliente("Laura", "calle", "mari", "123456789", 23);
+				pizzeria.addCliente(c);
+		Pizza p = new Pizza("Margarita", "tomate,queso", 12);
+		Pizza pepperoni = new Pizza("Pepperoni", "tomate,mozzarella,pepperoni", 9.50);
 //        Pizza cuatroQuesos = new Pizza("Cuatro Quesos", "mozzarella,gorgonzola,parmesano,queso de cabra", 10.00);
 //        Pizza hawaiana = new Pizza("Hawaiana", "tomate,mozzarella,jamon,piña", 30.00);
-//			pizzeria.addPizza(p);
+			pizzeria.addPizza(p);
+			pizzeria.addPizza(pepperoni);
 		 int opcion;
 		do {
 			System.out.println("----Menú de la pizzeria----");
@@ -113,7 +118,11 @@ public class Main {
 					System.out.println("Si no quieres añadir más pizzas presiona 0.");
 					p1 = sc.nextInt();
 					if (p1 != 0) {
-						pe.addPizzaPedido(p1);
+						Pizza ppppp = pizzeria.buscarPizzaId(p1);
+						
+						if(ppppp != null) {
+							pe.addPizzaPedido(ppppp);
+						}
 					}
 
 				} while (p1 != 0);
@@ -123,7 +132,10 @@ public class Main {
 					System.out.println("Si no quieres eliminar las pizzas, pulsa 0. ");
 					p1 = sc.nextInt();
 					if (p1 != 0) {
-						pe.deletePizzaPedido(p1);
+						Pizza ppppl = pizzeria.buscarPizzaId(p1);
+						if(ppppl != null) {
+							pe.deletePizzaPedido(ppppl);
+						}
 					}
 
 				} while (p1 != 0);

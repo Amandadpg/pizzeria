@@ -6,43 +6,43 @@ import java.util.Scanner;
 
 public class Pizzeria {
 
-	private List<Cliente> cliente;
-	private static List<Pizza> pizza;
-	private static List<Pedido> pedido;
+	private List<Cliente> clientes;
+	private List<Pizza> pizzas;
+	private List<Pedido> pedidos;
 
 	public Pizzeria() {
 
-		this.cliente = new ArrayList<Cliente>();
-		this.pizza = new ArrayList<Pizza>();
-		this.pedido = new ArrayList<Pedido>();
+		this.clientes = new ArrayList<Cliente>();
+		this.pizzas = new ArrayList<Pizza>();
+		this.pedidos = new ArrayList<Pedido>();
 
 	}
 	
 	public static  List<Pizza> getPizza(){
-		return pizza;
+		return pizzas;
 	}
 	
 	public static List<Pedido> getPedido(){
-		return pedido;
+		return pedidos;
 	}
 
 	public void addPizza(Pizza pi) {
 		if (pi == null) {
 			throw new IllegalArgumentException("La pizza no puede ser nula");
 		}
-		pizza.add(pi);
+		pizzas.add(pi);
 	}
 
 	public void addCliente(Cliente cli) {
 		if (cli == null) {
 			throw new IllegalArgumentException("El cliente no puede ser nulo");
 		}
-		for (Cliente cliente : this.cliente) {
+		for (Cliente cliente : this.clientes) {
 			if (cliente.getId() == cli.getId()) {
 				throw new IllegalArgumentException("El comprador ya ha sido añadido");
 			}
 		}
-		cliente.add(cli);
+		clientes.add(cli);
 	}
 
 	public void addPedido(Pedido pe) {
@@ -50,28 +50,28 @@ public class Pizzeria {
 			throw new IllegalArgumentException("El pedido no puede ser nula");
 		}
 		
-		pedido.add(pe);
+		pedidos.add(pe);
 	}
 
 	public void verPedidos() {
-		if (pedido.isEmpty()) {
+		if (pedidos.isEmpty()) {
 			System.out.println("No hay pedidos registrados.");
 		} else {
 			System.out.println("Lista de pedidos:");
 			int contadorPedidos = 1;
-			for (Pedido p : pedido) {
-				System.out.println(contadorPedidos + ". " + pedido);
+			for (Pedido p : pedidos) {
+				System.out.println(contadorPedidos + ". " + pedidos);
 			}
 		}
 	}
 
 	public void verPizzas() {
-		if (pizza.isEmpty()) {
+		if (pizzas.isEmpty()) {
 			System.out.println("No hay pizzas disponibles en el menú.");
 		} else {
 			System.out.println("=== Menú de Pizzas ===");
 			int contador = 1;
-			for (Pizza pizza : pizza) {
+			for (Pizza pizza : pizzas) {
 				System.out.println(contador + ". " + pizza.getNombre());
 				System.out.println("   Precio: $" + pizza.getPrecio());
 				System.out.println("---------------------------");
@@ -81,12 +81,12 @@ public class Pizzeria {
 	}
 
 	public void verClientes() {
-		if (cliente.isEmpty()) {
+		if (clientes.isEmpty()) {
 			System.out.println("No hay clientes registrados en el sistema.");
 		} else {
 			System.out.println("=== Lista de Clientes ===");
 			int contador = 1;
-			for (Cliente cliente : cliente) {
+			for (Cliente cliente : clientes) {
 				System.out.println("Cliente #" + contador);
 				System.out.println("   Nombre     : " + cliente.getNombre());
 				System.out.println("   Dirección  : " + cliente.getDireccion());
@@ -104,7 +104,7 @@ public class Pizzeria {
 	public void buscarClientePorTelefono(Scanner sc) {
 		System.out.println("Telefono:");
 		String telef = sc.next();
-		for (Cliente cliente : cliente) {
+		for (Cliente cliente : clientes) {
 			if (cliente.getTelefono().equals(telef)) {
 				cliente.Info();
 
@@ -116,7 +116,7 @@ public class Pizzeria {
 
 	public Cliente buscarClientePorId(int id) {
 		Cliente c = null;
-		for (Cliente cliente : cliente) {
+		for (Cliente cliente : clientes) {
 			if (cliente.getId() == id) {
 				c = cliente;
 
@@ -127,7 +127,7 @@ public class Pizzeria {
 	
 	public Pizza buscarPizzaPorId(int id) {
 		Pizza p = null;
-		for (Pizza pizza : pizza) {
+		for (Pizza pizza : pizzas) {
 			if (pizza.getId() == id) {
 				p = pizza;
 
@@ -139,7 +139,7 @@ public class Pizzeria {
 	public void pizzasConIngrediente(Scanner sc) {
 		System.out.println("Ingrediente:");
 		String ingre = sc.next();
-		for (Pizza p : this.pizza) {
+		for (Pizza p : this.pizzas) {
 			if (p.getIngredientes().contains(ingre)) {
 				p.mostrarInformación();
 			}
@@ -149,7 +149,7 @@ public class Pizzeria {
 	public void pizzasSinIngrediente(Scanner sc) {
 		System.out.println("Ingrediente:");
 		String ingre = sc.next();
-		for (Pizza p : this.pizza) {
+		for (Pizza p : this.pizzas) {
 			if (!(p.getIngredientes().contains(ingre))) {
 				p.mostrarInformación();
 			}
@@ -157,10 +157,10 @@ public class Pizzeria {
 	} 
 	
 	public void mostrarPedido() {
-		if(pedido == null || pedido.size() == 0) {
+		if(pedidos == null || pedidos.size() == 0) {
 			throw new IllegalArgumentException("No hay pedido");
 		}
-		for(Pedido pedido : this.pedido) {
+		for(Pedido pedido : this.pedidos) {
 			pedido.mostrarInformacion();
 			System.out.println();
 		
@@ -173,7 +173,7 @@ public void mostrarPedidosLocal() {
 	System.out.println(" Pedidos Consumidos en el Local:");
     boolean hayPedidosLocal = false;
     
-    for (Pedido pedido : this.pedido) {
+    for (Pedido pedido : this.pedidos) {
         if (pedido.getTipo().equals("LOCAL")) {
             mostrarPedido();
             hayPedidosLocal = true;
@@ -190,7 +190,7 @@ public void mostrarPedidosRecoger() {
 	System.out.println(" Pedidos Consumidos para recoger:");
     boolean hayPedidosRecoger = false;
     
-    for (Pedido p : pedido) {
+    for (Pedido p : pedidos) {
         if (p.getTipo().equals("RECOGER")) {
             mostrarPedido();
             hayPedidosRecoger = true;
@@ -206,7 +206,7 @@ public void mostrarPedidosDomicilio() {
 	System.out.println(" Pedidos Consumidos para domicilio:");
     boolean hayPedidosDomicilio = false;
     
-    for (Pedido p : pedido) {
+    for (Pedido p : pedidos) {
         if (p.getTipo().equals("DOMICILIO")) {
             mostrarPedido();
             hayPedidosDomicilio = true;
@@ -220,10 +220,23 @@ public void mostrarPedidosDomicilio() {
 
 
 public void mostrarNombrePizza() {
-	for(Pizza pizza : pizza) {
+	for(Pizza pizza : pizzas) {
 		System.out.println(" -" + pizza.getId() + " " + pizza.getNombre());
 	}
 }
+
+
+	public Pizza buscarPizzaId(int idPizza) {
+		Pizza pizza = null;
+		
+		for(Pizza p : this.pizzas) {
+			if(p.getId() == idPizza) {
+				pizza = p;
+			}
+		}
+		
+		return pizza;
+	}
 }
 
 //	public void realizarPedido(Scanner sc) {
