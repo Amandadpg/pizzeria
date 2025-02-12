@@ -7,7 +7,7 @@ import java.util.List;
 public class Pedido {
 
 	private int id;
-	private int idCliente;
+	private Cliente cliente;
 	private LocalDateTime fecha;
 	private double total;
 	private Tipo tipo;
@@ -17,8 +17,8 @@ public class Pedido {
 	
 	private static Pedido ultimoPedido;
 	
-	public Pedido (int cliente,  String tipo) {
-		setCliente(cliente);
+	public Pedido (Cliente cliente,  String tipo) {
+		this.cliente = cliente;
 		this.fecha = LocalDateTime.now();
 		setTotal(0);
 		setTipo(tipo);
@@ -34,16 +34,26 @@ public class Pedido {
 	public void setId(int id) {
 		this.id = id;
 	}
+	
+	
 
-	public void setCliente(int idCliente) {
-		if (idCliente <= 0) {
-			throw new IllegalArgumentException("El ID no puede ser nulo");
-		}
-		this.idCliente = idCliente;
+//	public void setCliente(int idCliente) {
+//		if (idCliente <= 0) {
+//			throw new IllegalArgumentException("El ID no puede ser nulo");
+//		}
+//		this.idCliente = idCliente;
+//	}
+//
+//	public int getCliente() {
+//		return idCliente;
+//	}
+
+	public Cliente getCliente() {
+		return cliente;
 	}
 
-	public int getCliente() {
-		return idCliente;
+	public void setCliente(Cliente cliente) {
+		this.cliente = cliente;
 	}
 
 	public LocalDateTime getFecha() {
@@ -100,7 +110,7 @@ public class Pedido {
 
 	public void mostrarInformacion() {
 		System.out.println("ID del Pedido:" + id);
-		System.out.println("ID del cliente:" + idCliente);
+		System.out.println("Cliente:" + cliente.getId() + " - " + cliente.getNombre());
 		System.out.println("Fecha:" + fecha);
 		System.out.println("Total del pedido:" + total);
 		System.out.println("Tipo de pedido:" + tipo);
