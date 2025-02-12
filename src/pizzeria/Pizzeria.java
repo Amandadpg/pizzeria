@@ -174,7 +174,7 @@ public void mostrarPedidosLocal() {
     boolean hayPedidosLocal = false;
     
     for (Pedido p : pedido) {
-        if (p.getTipo().equals(Tipo.LOCAL)) {
+        if (p.getTipo().equals("LOCAL")) {
             mostrarPedido();
             hayPedidosLocal = true;
         }
@@ -191,7 +191,7 @@ public void mostrarPedidosRecoger() {
     boolean hayPedidosRecoger = false;
     
     for (Pedido p : pedido) {
-        if (p.getTipo().equals(Tipo.RECOGER)) {
+        if (p.getTipo().equals("RECOGER")) {
             mostrarPedido();
             hayPedidosRecoger = true;
         }
@@ -207,7 +207,7 @@ public void mostrarPedidosDomicilio() {
     boolean hayPedidosDomicilio = false;
     
     for (Pedido p : pedido) {
-        if (p.getTipo().equals(Tipo.DOMICILIO)) {
+        if (p.getTipo().equals("DOMICILIO")) {
             mostrarPedido();
             hayPedidosDomicilio = true;
         }
