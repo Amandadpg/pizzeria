@@ -181,7 +181,7 @@ public class Main {
 				
 			case 10:
 				
-				pizzeria.verPedidos();
+				pizzeria.mostrarPedidosHoy();
 				
 				break;
 		

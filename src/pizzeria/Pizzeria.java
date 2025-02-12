@@ -230,10 +230,10 @@ public void mostrarNombrePizza() {
 public void mostrarUltimoPedido() {
     System.out.println("Último Pedido Realizado:");
     
-    if (pedido.isEmpty()) {
+    if (pedidos.isEmpty()) {
         System.out.println("No hay pedidos registrados aún.");
     } else {
-        Pedido ultimo = pedido.get(pedido.size() - 1);  
+        Pedido ultimo = pedidos.get(pedidos.size() - 1);  
         mostrarPedido();
     }
 }
@@ -243,7 +243,7 @@ public void mostrarPedidosHoy() {
 	LocalDateTime inicio = LocalDateTime.of(LocalDate.now(), LocalTime.NOON);
 	LocalDateTime fin = LocalDateTime.of(LocalDate.now(), LocalTime.MAX);
 	
-	for(Pedido p : pedido) {
+	for(Pedido p : pedidos) {
 		if(p.getFecha().isAfter(inicio) && p.getFecha().isBefore(fin)) {
 			p.mostrarInformacion();
 		}
