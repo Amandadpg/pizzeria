@@ -1,5 +1,8 @@
 package pizzeria;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -18,11 +21,11 @@ public class Pizzeria {
 
 	}
 	
-	public static  List<Pizza> getPizza(){
+	public  List<Pizza> getPizza(){
 		return pizzas;
 	}
 	
-	public static List<Pedido> getPedido(){
+	public List<Pedido> getPedido(){
 		return pedidos;
 	}
 
@@ -125,7 +128,7 @@ public class Pizzeria {
 		return c;
 	}
 	
-	public Pizza buscarPizzaPorId(int id) {
+	public Pizza buscarPizzaId(int id) {
 		Pizza p = null;
 		for (Pizza pizza : pizzas) {
 			if (pizza.getId() == id) {
@@ -224,19 +227,30 @@ public void mostrarNombrePizza() {
 		System.out.println(" -" + pizza.getId() + " " + pizza.getNombre());
 	}
 }
+public void mostrarUltimoPedido() {
+    System.out.println("Último Pedido Realizado:");
+    
+    if (pedido.isEmpty()) {
+        System.out.println("No hay pedidos registrados aún.");
+    } else {
+        Pedido ultimo = pedido.get(pedido.size() - 1);  
+        mostrarPedido();
+    }
+}
 
 
-	public Pizza buscarPizzaId(int idPizza) {
-		Pizza pizza = null;
-		
-		for(Pizza p : this.pizzas) {
-			if(p.getId() == idPizza) {
-				pizza = p;
-			}
+public void mostrarPedidosHoy() {
+	LocalDateTime inicio = LocalDateTime.of(LocalDate.now(), LocalTime.NOON);
+	LocalDateTime fin = LocalDateTime.of(LocalDate.now(), LocalTime.MAX);
+	
+	for(Pedido p : pedido) {
+		if(p.getFecha().isAfter(inicio) && p.getFecha().isBefore(fin)) {
+			p.mostrarInformacion();
 		}
-		
-		return pizza;
 	}
+	
+}
+
 }
 
 //	public void realizarPedido(Scanner sc) {

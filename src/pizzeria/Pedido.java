@@ -14,15 +14,17 @@ public class Pedido {
 	private List<Pizza> pizzas;
 
 	private static int idCodigo = 1;
-
-	public Pedido(int cliente, String tipo) {
+	
+	private static Pedido ultimoPedido;
+	
+	public Pedido (int cliente,  String tipo) {
 		setCliente(cliente);
 		this.fecha = LocalDateTime.now();
 		setTotal(0);
 		setTipo(tipo);
 		this.id = idCodigo++;
 		this.pizzas = new ArrayList<Pizza>();
-
+		ultimoPedido = this;
 	}
 
 	public int getId() {
@@ -44,7 +46,7 @@ public class Pedido {
 		return idCliente;
 	}
 
-	public LocalDateTime getFecha(LocalDateTime fecha) {
+	public LocalDateTime getFecha() {
 		return fecha;
 	}
 

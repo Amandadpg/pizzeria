@@ -213,8 +213,7 @@ public class Main {
 				break;
 			
 			case 16:
-				
-				// Falta este	
+				pizzeria.mostrarUltimoPedido();	
 				
 				break;
 			
@@ -235,7 +234,7 @@ public class Main {
 		
 			
 			
-		}while(opcion >= 1 || opcion <=17);
+		}while(opcion !=17);
 	}
 		
 		public static Pedido nuevoPedido(Scanner sc) {
