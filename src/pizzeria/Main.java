@@ -169,15 +169,23 @@ public class Main {
 				
 			case 10:
 				
-				// Falta este por terminar(hacer el pedido)
+				
 				pizzeria.verPedidos();
 				
 				break;
 		
 				
 			case 11: 
+				pizzeria.mostrarPedidosLocal();
+				break;
 				
-				// Falta este
+			case 12:
+				pizzeria.mostrarPedidosRecoger();
+				break;
+				
+			case 13:
+				pizzeria.mostrarPedidosRecoger();
+				break;
 				
 			case 14:
 				

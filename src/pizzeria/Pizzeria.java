@@ -166,6 +166,57 @@ public class Pizzeria {
 		
 		}
 	}
+
+
+
+public void mostrarPedidosLocal() {
+	System.out.println(" Pedidos Consumidos en el Local:");
+    boolean hayPedidosLocal = false;
+    
+    for (Pedido p : pedido) {
+        if (p.getTipo().equals(Tipo.LOCAL)) {
+            mostrarPedido();
+            hayPedidosLocal = true;
+        }
+    }
+
+    if (!hayPedidosLocal) {
+        System.out.println("No hay pedidos consumidos en el local.");
+    }
+}
+
+
+public void mostrarPedidosRecoger() {
+	System.out.println(" Pedidos Consumidos para recoger:");
+    boolean hayPedidosRecoger = false;
+    
+    for (Pedido p : pedido) {
+        if (p.getTipo().equals(Tipo.RECOGER)) {
+            mostrarPedido();
+            hayPedidosRecoger = true;
+        }
+    }
+
+    if (!hayPedidosRecoger) {
+        System.out.println("No hay pedidos consumidos para recoger.");
+    }
+}
+
+public void mostrarPedidosDomicilio() {
+	System.out.println(" Pedidos Consumidos para domicilio:");
+    boolean hayPedidosDomicilio = false;
+    
+    for (Pedido p : pedido) {
+        if (p.getTipo().equals(Tipo.DOMICILIO)) {
+            mostrarPedido();
+            hayPedidosDomicilio = true;
+        }
+    }
+
+    if (!hayPedidosDomicilio) {
+        System.out.println("No hay pedidos consumidos para el domicilio.");
+    }
+}
 }
 
 //	public void realizarPedido(Scanner sc) {
