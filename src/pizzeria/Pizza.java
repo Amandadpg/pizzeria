@@ -1,7 +1,5 @@
 package pizzeria;
 
-import java.util.Scanner;
-
 public class Pizza {
 	private String nombre;
 	private String ingredientes;
@@ -32,7 +30,7 @@ public class Pizza {
 	}
 
 	public void setId(int id) {
-		this.idPizza = contadorId++;
+		this.idPizza = idPizza;
 	}
 
 	public String getNombre() {
@@ -53,7 +51,7 @@ public class Pizza {
 	}
 
 	public void setIngredientes(String ingredientes) {
-		if (nombre == null || nombre.isBlank()) {
+		if (ingredientes == null || ingredientes.isBlank()) {
 			throw new IllegalArgumentException("Los ingredientes no pueden ser nulo ni estar en blanco");
 
 		}
