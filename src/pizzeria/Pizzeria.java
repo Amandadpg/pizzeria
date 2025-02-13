@@ -234,7 +234,7 @@ public class Pizzeria {
 	}
 
 	public void mostrarPedidosHoy() {
-		LocalDateTime inicio = LocalDateTime.of(LocalDate.now(), LocalTime.NOON);
+		LocalDateTime inicio = LocalDateTime.of(LocalDate.now(), LocalTime.MIDNIGHT);
 		LocalDateTime fin = LocalDateTime.of(LocalDate.now(), LocalTime.MAX);
 
 		for (Pedido p : pedidos) {
